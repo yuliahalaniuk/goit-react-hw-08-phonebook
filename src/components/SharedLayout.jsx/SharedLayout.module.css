@@ -3,17 +3,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* gap: 90px; */
   width: 80%;
   margin: 0 auto;
 }
 
 .headerNavLinkWrap {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   gap: 90px;
 }
+
 .headerNavLink {
   color: #fff;
   font-family: Roboto;

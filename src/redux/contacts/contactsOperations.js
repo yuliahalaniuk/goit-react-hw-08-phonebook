@@ -5,8 +5,8 @@ export const fetchContacts = createAsyncThunk(
   'phonebook/fetchContacts',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get('/contacts');
-      return response.data;
+      const { data } = await axios.get('/contacts');
+      return data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -15,21 +15,11 @@ export const fetchContacts = createAsyncThunk(
 
 export const addContacts = createAsyncThunk(
   'phonebook/addContact',
-  async ({ name, number }, { rejectWithValue }) => {
+  async (contact, { rejectWithValue }) => {
     try {
-      console.log({
-        name: `${name}`,
-        number: `${number}`,
-      });
-      const response = await axios.post('/contacts', {
-        name: `${name}`,
-        number: `${number}`,
-      });
-
-      console.log('res', response);
-      return response.data;
+      const { data } = await axios.post('/contacts', contact);
+      return data;
     } catch (error) {
-      console.log('err', error);
       return rejectWithValue(error.message);
     }
   }
@@ -39,8 +29,8 @@ export const deleteContacts = createAsyncThunk(
   'phonebook/deleteContact',
   async (id, { rejectWithValue }) => {
     try {
-      const response = await axios.delete(`/contacts/${id}`);
-      return response.data.id;
+      const { data } = await axios.delete(`/contacts/${id}`);
+      return data.id;
     } catch (error) {
       return rejectWithValue(error.message);
     }

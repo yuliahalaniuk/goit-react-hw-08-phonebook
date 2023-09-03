@@ -1,11 +1,12 @@
-import ContactForm from '../components/ContactForm/ContactForm';
 import ContactList from '../components/ContactList/ContactList';
 import Filter from '../components/Filter/Filter';
-import css from '../components/App/App.module.css';
+import css from './ContactsPage.module.css';
 import { useEffect } from 'react';
-import { fetchContacts } from '../redux/contactsOperations';
+import { fetchContacts } from '../redux/contacts/contactsOperations';
 import { useDispatch, useSelector } from 'react-redux';
 import { getError } from 'redux/selectors';
+import ErrorComponent from 'components/Error/ErrorComponent';
+import Container from 'components/Container/Container';
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
@@ -17,28 +18,17 @@ const ContactsPage = () => {
   const isError = useSelector(getError);
 
   if (isError) {
-    return (
-      <p className={css.errorMessageWrap}>
-        <span className={css.errorMessageMain}>Opps...</span>
-        <span className={css.errorMessage}>
-          {isError}. Please reload the page.
-        </span>
-      </p>
-    );
+    return <ErrorComponent isError={isError} />;
   }
 
   return (
-    <div className={css.container}>
+    <Container>
       <div className={css.wrapper}>
-        <h1 className={css.phonebookTitle}>Phonebook</h1>
-        <ContactForm />
-
         <h2 className={css.contactListTitle}>Contacts</h2>
-
         <Filter />
         <ContactList />
       </div>
-    </div>
+    </Container>
   );
 };
 

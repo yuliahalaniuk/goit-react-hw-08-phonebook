@@ -1,0 +1,26 @@
+.phonebookTitle {
+  color: #7e86f6;
+  font-family: Oswald;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.92px;
+  margin-bottom: 40px;
+}
+
+.wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contactListTitle {
+  color: #7e86f6;
+  font-family: Oswald;
+  font-size: 20px;
+
+  font-weight: 400;
+
+  letter-spacing: 1.92px;
+  margin-bottom: 40px;
+}

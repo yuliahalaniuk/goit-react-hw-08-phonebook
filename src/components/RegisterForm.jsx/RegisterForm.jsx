@@ -1,19 +1,19 @@
 import { useDispatch } from 'react-redux';
-import { registerUser } from '../../redux/authOperations';
-import css from './RegisterForm.module.css';
+import { registerUser } from '../../redux/auth/authOperations';
+import css from '../Form.module.css';
 
 const RegisterForm = () => {
   const dispatch = useDispatch();
   const handleSubmit = e => {
     e.preventDefault();
     const { name, email, password } = e.currentTarget.elements;
-    const newUser = {
-      name: name.value,
-      email: email.value,
-      password: password.value,
-    };
-    console.log(newUser);
-    dispatch(registerUser(newUser));
+    dispatch(
+      registerUser({
+        name: name.value,
+        email: email.value,
+        password: password.value,
+      })
+    );
   };
 
   return (
@@ -24,11 +24,11 @@ const RegisterForm = () => {
       </label>
       <label className={css.formLabel}>
         Email
-        <input className={css.formInput} type="text" name="email" />
+        <input className={css.formInput} type="email" name="email" />
       </label>
       <label className={css.formLabel}>
         Password
-        <input className={css.formInput} type="text" name="password" />
+        <input className={css.formInput} type="password" name="password" />
       </label>
       <button className={css.submitBtn} type="submit">
         Register

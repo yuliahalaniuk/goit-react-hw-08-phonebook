@@ -1,26 +1,26 @@
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../../redux/authOperations';
-import css from './LoginForm.module.css';
+import { loginUser } from '../../redux/auth/authOperations';
+import css from '../Form.module.css';
+
 const LoginForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
     const { email, password } = e.currentTarget.elements;
-    const curUser = {
-      email: email.value,
-      password: password.value,
-    };
-
-    console.log(curUser);
-    dispatch(loginUser(curUser));
+    dispatch(
+      loginUser({
+        email: email.value,
+        password: password.value,
+      })
+    );
   };
 
   return (
     <form className={css.form} onSubmit={handleSubmit}>
       <label className={css.formLabel}>
         Email
-        <input className={css.formInput} type="text" name="email" />
+        <input className={css.formInput} type="email" name="email" />
       </label>
       <label className={css.formLabel}>
         Password

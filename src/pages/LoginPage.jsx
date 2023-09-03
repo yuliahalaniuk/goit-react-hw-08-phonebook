@@ -1,25 +1,20 @@
 import { useSelector } from 'react-redux';
 import LoginForm from '../components/LoginForm/LoginForm';
-import css from './HomePage.module.css';
 import { getAuthError } from 'redux/selectors';
+import ErrorComponent from 'components/Error/ErrorComponent';
+import Container from 'components/Container/Container';
+
 const LoginPage = () => {
   const isError = useSelector(getAuthError);
 
   if (isError) {
-    return (
-      <p className={css.errorMessageWrap}>
-        <span className={css.errorMessageMain}>Opps...</span>
-        <span className={css.errorMessage}>
-          {isError}. Please reload the page.
-        </span>
-      </p>
-    );
+    return <ErrorComponent isError={isError} />;
   }
 
   return (
-    <div className={css.container}>
+    <Container>
       <LoginForm />
-    </div>
+    </Container>
   );
 };
 

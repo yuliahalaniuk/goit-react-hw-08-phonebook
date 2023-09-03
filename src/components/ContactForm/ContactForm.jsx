@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import css from './ContactForm.module.css';
+import css from '../Form.module.css';
 import { getContacts, getLoading } from '../../redux/selectors';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContacts } from '../../redux/contactsOperations';
+import { addContacts } from '../../redux/contacts/contactsOperations';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -70,7 +70,7 @@ const ContactForm = () => {
         ></input>
       </label>
 
-      <button type="submit" className={css.addContactBtn} disabled={isLoading}>
+      <button type="submit" className={css.submitBtn} disabled={isLoading}>
         Add contact
       </button>
     </form>

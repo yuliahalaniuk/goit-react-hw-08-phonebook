@@ -37,14 +37,3 @@ a {
   text-decoration: none;
   display: block;
 }
-
-.container {
-  max-width: 80%;
-  margin: 0 auto;
-  border-radius: 14px;
-  background-color: #fff;
-  box-shadow: 0px 20px 30px 0px rgba(102, 106, 245, 0.13);
-  padding-top: 40px;
-  padding-inline: 50px;
-  padding-bottom: 32px;
-}

@@ -1,11 +1,12 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import css from './SharedLayout.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { logoutUser } from 'redux/authOperations';
+import { logoutUser } from 'redux/auth/authOperations';
+import { getIsLoggedIn } from 'redux/selectors';
 
 const SharedLayout = () => {
   const dispatch = useDispatch();
-  const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
+  const isLoggedIn = useSelector(getIsLoggedIn);
   return (
     <>
       <header className={css.header}>
@@ -28,6 +29,14 @@ const SharedLayout = () => {
                 to="contacts"
               >
                 Contacts
+              </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? css.headerNavLinkActive : css.headerNavLink
+                }
+                to="create"
+              >
+                Add Contact
               </NavLink>
             </div>
             <button
