@@ -5,11 +5,11 @@ import {
   deleteContacts,
 } from './contactsOperations';
 
-const initialState = {
+const initialStateContacts = {
   contacts: {
     items: [],
     isLoading: false,
-   isError: null,
+    isError: null,
   },
 
   filter: '',
@@ -28,7 +28,7 @@ const setPendingStatus = (state, action) => {
 const contactsSlice = createSlice({
   name: 'phonebook',
 
-  initialState,
+  initialState: initialStateContacts,
 
   reducers: {
     filterContacts: (state, action) => {
@@ -45,6 +45,7 @@ const contactsSlice = createSlice({
 
     [addContacts.pending]: setPendingStatus,
     [addContacts.fulfilled]: (state, action) => {
+      console.log('book added', action.payload);
       state.contacts.items.push(action.payload);
       state.contacts.isLoading = false;
     },
@@ -52,6 +53,7 @@ const contactsSlice = createSlice({
 
     [deleteContacts.pending]: setPendingStatus,
     [deleteContacts.fulfilled]: (state, action) => {
+      console.log('get id', action.payload);
       state.contacts.items = state.contacts.items.filter(
         contact => contact.id !== action.payload
       );
@@ -61,7 +63,8 @@ const contactsSlice = createSlice({
   },
 });
 
-export const { addContact, deleteContact, filterContacts } =
-  contactsSlice.actions;
+export const { filterContacts } = contactsSlice.actions;
 
-export default contactsSlice.reducer;
+const contactsReducer = contactsSlice.reducer;
+
+export default contactsReducer;

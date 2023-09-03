@@ -13,7 +13,7 @@ const ContactList = () => {
   const isLoading = useSelector(getLoading);
   const getVisibleContacts = () => {
     const normalizedFilter = filterText.toLowerCase();
-    return contacts.filter(contact =>
+    return contacts?.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
     );
   };
@@ -22,10 +22,12 @@ const ContactList = () => {
     <>
       {isLoading ? (
         <Loader />
+      ) : contacts.length === 0 ? (
+        <p> No contacts yet </p>
       ) : (
         <ul className={css.contactList}>
-          {getVisibleContacts().map(({ id, name, phone }) => (
-            <ContactListItem key={id} id={id} name={name} number={phone} />
+          {getVisibleContacts().map(({ id, name, number }) => (
+            <ContactListItem key={id} id={id} name={name} number={number} />
           ))}
         </ul>
       )}

@@ -1,12 +1,13 @@
-.phonebookTitle {
+.mainHeader {
+  text-align: center;
   color: #7e86f6;
   font-family: Oswald;
-  font-size: 24px;
+  font-size: 48px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   letter-spacing: 1.92px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .container {
@@ -21,20 +22,40 @@
   margin-bottom: 100px;
 }
 
-.wrapper {
-  max-width: 400px;
-  margin: 0 auto;
+.text {
+  color: #000;
+  font-family: Poppins;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.96px;
 }
 
-.contactListTitle {
-  color: #7e86f6;
-  font-family: Oswald;
-  font-size: 20px;
+.text + .text {
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
 
-  font-weight: 400;
+.homeBtn {
+  min-width: 120px;
+  height: 54px;
+  background: #7e86f6;
+  text-align: center;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  padding: 16px 20px;
+  border-radius: 8px;
+}
 
-  letter-spacing: 1.92px;
-  margin-bottom: 40px;
+.homeBtnWrap {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
 }
 
 .errorMessageWrap {
@@ -59,25 +80,4 @@
 .errorMessageMain {
   font-size: 48px;
   font-weight: 600;
-}
-
-.loader {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: block;
-  margin: 100px auto 0;
-  border-top: 3px solid #fff;
-  border-right: 3px solid transparent;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }

@@ -1,47 +1,67 @@
-import React, { useEffect } from 'react';
-
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import css from './App.module.css';
-
-import ContactForm from '../ContactForm/ContactForm';
-import ContactList from '../ContactList/ContactList';
-import Filter from '../Filter/Filter';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchContacts } from '../../redux/contactsOperations';
-import { getError } from 'redux/selectors';
+import HomePage from '../../pages/HomePage';
+import LoginPage from '../../pages/LoginPage';
+import ContactsPage from '../../pages/ContactsPage';
+import RegisterPage from 'pages/RegisterPage';
+import SharedLayout from '../SharedLayout.jsx/SharedLayout';
+import { useEffect } from 'react';
+import { refreshUser } from 'redux/authOperations';
+
+import { RestrictedRoute } from '../RestrictedRoute';
+import { PrivateRoute } from '../PrivateRoute';
 
 const App = () => {
   const dispatch = useDispatch();
 
+  const isRefreshing = useSelector(state => state.auth.isRefreshing);
+
   useEffect(() => {
-    dispatch(fetchContacts());
+    console.log('app mount');
+    dispatch(refreshUser());
   }, [dispatch]);
 
-  const isError = useSelector(getError);
-
-  if (isError) {
-    return (
-      <p className={css.errorMessageWrap}>
-        <span className={css.errorMessageMain}>Opps...</span>
-        <span className={css.errorMessage}>
-          {isError}. Please reload the page.
-        </span>
-      </p>
-    );
-  }
-
   return (
-    <div className={css.container}>
-      <div className={css.wrapper}>
-        <h1 className={css.phonebookTitle}>Phonebook</h1>
-        <ContactForm />
-
-        <h2 className={css.contactListTitle}>Contacts</h2>
-
-        <Filter />
-        <ContactList />
-      </div>
-    </div>
+    <>
+      {isRefreshing ? (
+        <span className={css.loader}></span>
+      ) : (
+        <>
+          <Routes>
+            <Route path="/" element={<SharedLayout />}>
+              <Route index element={<HomePage />} />
+              <Route
+                path="/register"
+                element={
+                  <RestrictedRoute
+                    component={RegisterPage}
+                    redirectTo="/contacts"
+                  />
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <RestrictedRoute
+                    component={LoginPage}
+                    redirectTo="/contacts"
+                  />
+                }
+              />
+              <Route
+                path="/contacts"
+                element={
+                  <PrivateRoute component={ContactsPage} redirectTo="/" />
+                }
+              />
+            </Route>
+          </Routes>
+        </>
+      )}
+    </>
   );
 };
 

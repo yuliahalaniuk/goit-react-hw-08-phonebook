@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
 import css from './ContactForm.module.css';
-
-import { nanoid } from 'nanoid';
 import { getContacts, getLoading } from '../../redux/selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import { addContacts } from '../../redux/contactsOperations';
@@ -36,7 +34,8 @@ const ContactForm = () => {
     e.preventDefault();
 
     const { name, number } = e.currentTarget.elements;
-    addNewContact({ name: name.value, phone: number.value, id: nanoid() });
+
+    addNewContact({ name: name.value, number: number.value });
     setName('');
     setNumber('');
   };
