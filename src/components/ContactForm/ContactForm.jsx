@@ -4,8 +4,10 @@ import css from '../Form.module.css';
 import { getContacts, getLoading } from '../../redux/selectors';
 import { useSelector, useDispatch } from 'react-redux';
 import { addContacts } from '../../redux/contacts/contactsOperations';
+import { useNavigate } from 'react-router-dom';
 
 const ContactForm = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -38,6 +40,7 @@ const ContactForm = () => {
     addNewContact({ name: name.value, number: number.value });
     setName('');
     setNumber('');
+    navigate('/contacts');
   };
 
   return (
