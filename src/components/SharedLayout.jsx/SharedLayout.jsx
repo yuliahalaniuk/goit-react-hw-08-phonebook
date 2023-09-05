@@ -1,11 +1,9 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import css from './SharedLayout.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { logoutUser } from 'redux/auth/authOperations';
+import { useSelector } from 'react-redux';
 import { getIsLoggedIn } from 'redux/selectors';
-
+import UserMenu from 'components/UserMenu/UserMenu';
 const SharedLayout = () => {
-  const dispatch = useDispatch();
   const isLoggedIn = useSelector(getIsLoggedIn);
   return (
     <>
@@ -39,15 +37,7 @@ const SharedLayout = () => {
                 Add Contact
               </NavLink>
             </div>
-            <button
-              type="button"
-              className={css.logoutBtn}
-              onClick={() => {
-                dispatch(logoutUser());
-              }}
-            >
-              Log out
-            </button>
+            <UserMenu />
           </>
         )}
       </header>

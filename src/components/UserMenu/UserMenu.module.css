@@ -1,0 +1,39 @@
+.userMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.logoutBtn {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  border-radius: 8px;
+}
+.userGreeting {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 14px;
+}
+@media (max-width: 480px) {
+  .logoutBtn {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (min-width: 768px) {
+  .logoutBtn {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logoutBtn {
+    font-size: 20px;
+  }
+}
