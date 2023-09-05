@@ -9,8 +9,8 @@ const ContactListItem = ({ id, name, number }) => {
 
   return (
     <li className={css.contactItem}>
-      <span>
-        <span className={css.contactItemName}>{name}:</span> {number}
+      <span className={css.contactItemRaw}>
+        <span className={css.contactItemName}>{name}: </span> {number}
       </span>
       <button
         className={css.contactItemBtn}

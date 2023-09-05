@@ -1,7 +1,7 @@
 .filterTitle {
   color: #000;
   font-family: Poppins;
-  font-size: calc(var(--index) * 0.9);
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 1.12px;
 
@@ -21,7 +21,7 @@
   background-color: #f5f5ff;
   border-radius: 6px;
   padding: 10px 16px;
-  font-size: calc(var(--index) * 0.7);
+  font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -33,10 +33,14 @@
 
 @media (min-width: 1200px) {
   .filterTitle {
-    font-size: calc(var(--index) * 0.8);
+    font-size: 16px;
+    margin-bottom: 30px;
   }
   .filterInput {
-    height: 38px;
+    height: 40px;
     padding: 14px 20px;
+  }
+  .filterInput {
+    font-size: 16px;
   }
 }

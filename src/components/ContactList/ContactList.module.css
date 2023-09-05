@@ -7,5 +7,17 @@
 
 .contactListText {
   text-align: center;
-  font-size: calc(var(--index) * 0.9);
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .contactListText {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contactListText {
+    font-size: 22px;
+  }
 }

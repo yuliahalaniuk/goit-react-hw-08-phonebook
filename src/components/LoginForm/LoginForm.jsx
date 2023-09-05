@@ -21,11 +21,16 @@ const LoginForm = () => {
       <form className={css.form} onSubmit={handleSubmit}>
         <label className={css.formLabel}>
           Email
-          <input className={css.formInput} type="email" name="email" />
+          <input
+            className={css.formInput}
+            type="email"
+            name="email"
+            placeholder="your_email@mail.com"
+          />
         </label>
         <label className={css.formLabel}>
           Password
-          <input className={css.formInput} type="text" name="password" />
+          <input className={css.formInput} type="password" name="password" />
         </label>
         <button className={css.submitBtn} type="submit">
           Log in

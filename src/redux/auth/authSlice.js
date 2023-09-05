@@ -22,6 +22,7 @@ const setPendingStatus = (state, action) => {
 const setError = (state, action) => {
   state.isRefreshing = false;
   state.isError = action.payload;
+  state.isLoggedIn = false;
 };
 
 const authSlice = createSlice({

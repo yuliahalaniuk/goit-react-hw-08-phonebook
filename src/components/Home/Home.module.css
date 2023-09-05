@@ -2,7 +2,7 @@
   text-align: center;
   color: #7e86f6;
   font-family: Oswald;
-  font-size: calc(var(--index) * 2.4);
+  font-size: 34px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -13,7 +13,7 @@
 .text {
   color: #000;
   font-family: Poppins;
-  font-size: calc(var(--index) * 0.9);
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -23,6 +23,12 @@
 .text + .text {
   margin-top: 12px;
   margin-bottom: 32px;
+}
+
+.homeBtnWrap {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
 }
 
 .homeBtn {
@@ -37,7 +43,7 @@
   font-weight: 700;
   letter-spacing: 1.6px;
 
-  font-size: calc(var(--index) * 1.1);
+  font-size: 16px;
   padding: 12px 16px;
 }
 
@@ -47,14 +53,28 @@
   }
 }
 
+@media (min-width: 768px) {
+  .text {
+    font-size: 16px;
+  }
+  .homeBtn {
+    font-size: 18px;
+  }
+  .mainHeader {
+    font-size: 40px;
+  }
+}
 @media (min-width: 1200px) {
   .homeBtn {
     padding: 20px 24px;
   }
-}
-
-.homeBtnWrap {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
+  .text {
+    font-size: 18px;
+  }
+  .homeBtn {
+    font-size: 20px;
+  }
+  .mainHeader {
+    font-size: 48px;
+  }
 }

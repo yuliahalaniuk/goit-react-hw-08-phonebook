@@ -21,16 +21,28 @@ const RegisterForm = () => {
       <form className={css.form} onSubmit={handleSubmit}>
         <label className={css.formLabel}>
           Name
-          <input className={css.formInput} type="text" name="name" />
+          <input
+            className={css.formInput}
+            type="text"
+            name="name"
+            placeholder="Jack Jackson"
+          />
         </label>
         <label className={css.formLabel}>
           Email
-          <input className={css.formInput} type="email" name="email" />
+          <input
+            className={css.formInput}
+            type="email"
+            name="email"
+            placeholder="your_email@mail.com"
+          />
         </label>
         <label className={css.formLabel}>
           Password
           <input className={css.formInput} type="password" name="password" />
+          <p className={css.passwordWarning}>Minimum 8 characters</p>
         </label>
+
         <button className={css.submitBtn} type="submit">
           Register
         </button>

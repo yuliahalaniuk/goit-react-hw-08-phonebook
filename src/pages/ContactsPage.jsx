@@ -9,13 +9,12 @@ import ErrorComponent from 'components/Error/ErrorComponent';
 import Container from 'components/Container/Container';
 
 const ContactsPage = () => {
+  const isError = useSelector(getError);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(fetchContacts);
   }, [dispatch]);
-
-  const isError = useSelector(getError);
 
   if (isError) {
     return <ErrorComponent isError={isError} />;

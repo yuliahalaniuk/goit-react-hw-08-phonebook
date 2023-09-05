@@ -2,9 +2,7 @@
   color: #000;
   font-family: Poppins;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
-  line-height: normal;
   letter-spacing: 1.12px;
 
   display: flex;
@@ -35,7 +33,6 @@
   font-size: 12px;
 
   font-weight: 400;
-  line-height: normal;
   letter-spacing: 0.96px;
 }
 
@@ -51,7 +48,6 @@
   font-size: 14px;
 
   font-weight: 700;
-  line-height: normal;
   letter-spacing: 1.6px;
 }
 

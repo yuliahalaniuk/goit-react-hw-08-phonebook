@@ -6,6 +6,7 @@ import { PrivateRoute } from '../PrivateRoute';
 import { refreshUser } from 'redux/auth/authOperations';
 import { getIsRefreshing } from 'redux/selectors';
 import Loader from 'components/Loader/Loader';
+import { fetchContacts } from 'redux/contacts/contactsOperations';
 
 const HomePage = lazy(() => import('pages/HomePage'));
 const LoginPage = lazy(() => import('pages/LoginPage'));

@@ -6,10 +6,7 @@
 .formLabel {
   color: #000;
   font-family: Poppins;
-  font-size: calc(var(--index) * 0.9);
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-size: 14px;
   letter-spacing: 1.12px;
 
   display: flex;
@@ -30,13 +27,13 @@
   padding: 16px 20px;
   border: none;
   outline: none;
-  font-size: calc(var(--index) * 0.7);
+  font-size: 14px;
 }
 
 .formInput::placeholder {
   color: #9f9f9f;
   font-family: Poppins;
-  font-size: calc(var(--index) * 0.7);
+  font-size: 12px;
 
   font-weight: 400;
   line-height: normal;
@@ -52,10 +49,9 @@
 
   color: #fff;
   font-family: Poppins;
-  font-size: calc(var(--index) * 0.8);
+  font-size: 14px;
 
   font-weight: 700;
-  line-height: normal;
   letter-spacing: 1.6px;
 }
 
@@ -63,9 +59,14 @@
   background-color: rgba(102, 106, 245, 0.7);
 }
 
+.passwordWarning {
+  color: #3d3d3d;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
 @media (min-width: 768px) {
   .formLabel {
-    font-size: calc(var(--index) * 0.8);
+    font-size: 16px;
   }
   .formInput {
     height: 48px;
@@ -73,6 +74,10 @@
   }
   .submitBtn {
     padding: 16px 0;
+    font-size: 16px;
+  }
+  .formInput::placeholder {
+    font-size: 14px;
   }
 }
 @media (min-width: 1200px) {
@@ -80,15 +85,21 @@
     max-width: 500px;
   }
   .formLabel {
+    font-size: 18px;
     gap: 12px;
   }
   .formInput {
-    height: 52px;
+    height: 60px;
     padding: 10px 24px;
     border: none;
     outline: none;
+    font-size: 16px;
   }
   .submitBtn {
     padding: 18px 0;
+    font-size: 18px;
+  }
+  .formInput::placeholder {
+    font-size: 16px;
   }
 }

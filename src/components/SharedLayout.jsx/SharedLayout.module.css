@@ -13,36 +13,15 @@
   gap: 24px;
 }
 
-@media screen and (min-width: 768px) {
-  .header {
-    height: 100px;
-    width: 80%;
-  }
-  .headerNavLinkWrap {
-    gap: 50px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .header {
-    height: 140px;
-    width: 70%;
-  }
-}
-
-.headerNavLink {
+.headerNavLink,
+.headerNavLinkActive {
   color: #fff;
   font-family: Roboto;
-  font-size: calc(var(--index) * 0.8);
+  font-size: 16px;
   font-weight: 600;
 }
 
 .headerNavLinkActive {
-  color: #fff;
-  font-family: Roboto;
-  font-size: calc(var(--index) * 0.9);
-  font-weight: 600;
-
   position: relative;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -65,12 +44,62 @@
 .logoutBtn {
   color: #fff;
   font-family: Roboto;
-  font-size: calc(var(--index) * 0.8);
+  font-size: 14px;
   font-weight: 600;
   display: block;
-  margin-left: auto;
   padding: 10px 20px;
   border: 1px solid #fff;
   background-color: transparent;
   border-radius: 8px;
+}
+@media (max-width: 480px) {
+  .headerNavLinkWrap {
+    gap: 14px;
+  }
+  .logoutBtn {
+    font-size: 14px;
+    padding: 8px;
+  }
+  .headerNavLink,
+  .headerNavLinkActive {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    height: 100px;
+    width: 80%;
+  }
+  .headerNavLinkWrap {
+    gap: 50px;
+  }
+  .logoutBtn {
+    font-size: 18px;
+  }
+  .headerNavLink,
+  .headerNavLinkActive {
+    font-size: 18px;
+  }
+  .headerNavLinkActive::after {
+    width: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    height: 140px;
+    width: 70%;
+  }
+  .logoutBtn {
+    font-size: 20px;
+  }
+  .headerNavLink,
+  .headerNavLinkActive {
+    font-size: 22px;
+  }
+  .headerNavLinkActive::after {
+    width: 44px;
+    bottom: -10px;
+  }
 }

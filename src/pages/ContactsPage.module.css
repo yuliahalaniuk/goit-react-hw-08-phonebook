@@ -1,7 +1,7 @@
 .phonebookTitle {
   color: #7e86f6;
   font-family: Oswald;
-  font-size: calc(var(--index) * 1.6);
+  font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -17,5 +17,8 @@
 @media (min-width: 1200px) {
   .wrapper {
     max-width: 500px;
+  }
+  .phonebookTitle {
+    font-size: 28px;
   }
 }
