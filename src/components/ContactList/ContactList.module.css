@@ -4,3 +4,8 @@
   gap: 14px;
   list-style: square;
 }
+
+.contactListText {
+  text-align: center;
+  font-size: calc(var(--index) * 0.9);
+}

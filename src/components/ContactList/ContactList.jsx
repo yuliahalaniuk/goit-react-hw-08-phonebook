@@ -23,7 +23,7 @@ const ContactList = () => {
       {isLoading ? (
         <Loader type="secondary" />
       ) : contacts.length === 0 ? (
-        <p> No contacts yet </p>
+        <p className={css.contactListText}> No contacts yet </p>
       ) : (
         <ul className={css.contactList}>
           {getVisibleContacts().map(({ id, name, number }) => (

@@ -63,7 +63,7 @@
   background-color: rgba(102, 106, 245, 0.7);
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .formLabel {
     font-size: calc(var(--index) * 0.8);
   }
@@ -75,7 +75,7 @@
     padding: 16px 0;
   }
 }
-@media screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .wrapper {
     max-width: 500px;
   }

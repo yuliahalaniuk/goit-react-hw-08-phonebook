@@ -23,7 +23,7 @@ const Home = () => {
       </p>
       <div className={css.homeBtnWrap}>
         {isLoggedIn ? (
-          <Link to="/register" className={css.homeBtn}>
+          <Link to="/create" className={css.homeBtn}>
             Create contacts
           </Link>
         ) : (

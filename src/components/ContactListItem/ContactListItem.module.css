@@ -31,13 +31,13 @@
   font-weight: 600;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .contactItemBtn {
     padding: 8px 12px;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
   .contactItem {
     font-size: calc(var(--index) * 0.8);
   }
