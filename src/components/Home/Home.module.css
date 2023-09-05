@@ -2,7 +2,7 @@
   text-align: center;
   color: #7e86f6;
   font-family: Oswald;
-  font-size: 48px;
+  font-size: calc(var(--index) * 2.4);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -13,7 +13,7 @@
 .text {
   color: #000;
   font-family: Poppins;
-  font-size: 12px;
+  font-size: calc(var(--index) * 0.9);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -26,18 +26,31 @@
 }
 
 .homeBtn {
-  min-width: 120px;
-  height: 54px;
+  min-width: 90px;
+
   background: #7e86f6;
   text-align: center;
   color: #fff;
   font-family: Poppins;
-  font-size: 16px;
+  border-radius: 8px;
   line-height: 1.5;
   font-weight: 700;
   letter-spacing: 1.6px;
-  padding: 16px 20px;
-  border-radius: 8px;
+
+  font-size: calc(var(--index) * 1.1);
+  padding: 12px 16px;
+}
+
+@media screen and (min-width: 480px) {
+  .homeBtn {
+    padding: 16px 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .homeBtn {
+    padding: 20px 24px;
+  }
 }
 
 .homeBtnWrap {

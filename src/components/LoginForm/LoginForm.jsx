@@ -17,19 +17,21 @@ const LoginForm = () => {
   };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit}>
-      <label className={css.formLabel}>
-        Email
-        <input className={css.formInput} type="email" name="email" />
-      </label>
-      <label className={css.formLabel}>
-        Password
-        <input className={css.formInput} type="text" name="password" />
-      </label>
-      <button className={css.submitBtn} type="submit">
-        Log in
-      </button>
-    </form>
+    <div className={css.wrapper}>
+      <form className={css.form} onSubmit={handleSubmit}>
+        <label className={css.formLabel}>
+          Email
+          <input className={css.formInput} type="email" name="email" />
+        </label>
+        <label className={css.formLabel}>
+          Password
+          <input className={css.formInput} type="text" name="password" />
+        </label>
+        <button className={css.submitBtn} type="submit">
+          Log in
+        </button>
+      </form>
+    </div>
   );
 };
 

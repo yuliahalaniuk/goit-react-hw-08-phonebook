@@ -10,20 +10,37 @@
 .headerNavLinkWrap {
   display: flex;
   align-items: center;
-  gap: 90px;
+  gap: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: 100px;
+    width: 80%;
+  }
+  .headerNavLinkWrap {
+    gap: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header {
+    height: 140px;
+    width: 70%;
+  }
 }
 
 .headerNavLink {
   color: #fff;
   font-family: Roboto;
-  font-size: 16px;
+  font-size: calc(var(--index) * 0.8);
   font-weight: 600;
 }
 
 .headerNavLinkActive {
   color: #fff;
   font-family: Roboto;
-  font-size: 16px;
+  font-size: calc(var(--index) * 0.9);
   font-weight: 600;
 
   position: relative;
@@ -48,7 +65,7 @@
 .logoutBtn {
   color: #fff;
   font-family: Roboto;
-  font-size: 16px;
+  font-size: calc(var(--index) * 0.8);
   font-weight: 600;
   display: block;
   margin-left: auto;

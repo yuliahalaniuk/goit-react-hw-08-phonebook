@@ -1,7 +1,12 @@
+.wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .formLabel {
   color: #000;
   font-family: Poppins;
-  font-size: 14px;
+  font-size: calc(var(--index) * 0.9);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -16,8 +21,6 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-
-  margin-bottom: 40px;
 }
 
 .formInput {
@@ -27,12 +30,13 @@
   padding: 16px 20px;
   border: none;
   outline: none;
+  font-size: calc(var(--index) * 0.7);
 }
 
 .formInput::placeholder {
   color: #9f9f9f;
   font-family: Poppins;
-  font-size: 12px;
+  font-size: calc(var(--index) * 0.7);
 
   font-weight: 400;
   line-height: normal;
@@ -41,14 +45,14 @@
 
 .submitBtn {
   width: 100%;
-  height: 44px;
+  padding: 14px 0;
   background: #6569f6;
   border: none;
   outline: none;
 
   color: #fff;
   font-family: Poppins;
-  font-size: 14px;
+  font-size: calc(var(--index) * 0.8);
 
   font-weight: 700;
   line-height: normal;
@@ -57,4 +61,34 @@
 
 .submitBtn:disabled {
   background-color: rgba(102, 106, 245, 0.7);
+}
+
+@media screen and (min-width: 768px) {
+  .formLabel {
+    font-size: calc(var(--index) * 0.8);
+  }
+  .formInput {
+    height: 48px;
+    padding: 18px 22px;
+  }
+  .submitBtn {
+    padding: 16px 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    max-width: 500px;
+  }
+  .formLabel {
+    gap: 12px;
+  }
+  .formInput {
+    height: 52px;
+    padding: 10px 24px;
+    border: none;
+    outline: none;
+  }
+  .submitBtn {
+    padding: 18px 0;
+  }
 }

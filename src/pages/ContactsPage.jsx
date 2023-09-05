@@ -24,7 +24,7 @@ const ContactsPage = () => {
   return (
     <Container>
       <div className={css.wrapper}>
-        <h2 className={css.contactListTitle}>Contacts</h2>
+        <h2 className={css.phonebookTitle}>Contacts</h2>
         <Filter />
         <ContactList />
       </div>

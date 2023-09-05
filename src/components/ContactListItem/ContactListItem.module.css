@@ -6,7 +6,7 @@
 
   color: #000;
   font-family: Poppins;
-  font-size: 14px;
+  font-size: calc(var(--index) * 0.9);
 
   line-height: normal;
   letter-spacing: 0.96px;
@@ -17,12 +17,10 @@
   border: none;
   outline: none;
   border-radius: 8px;
-  height: 28px;
-  max-width: 80px;
-
   color: #fff;
   font-family: Poppins;
-  font-size: 12px;
+  font-size: calc(var(--index) * 0.8);
+  padding: 6px 8px;
 
   line-height: normal;
   letter-spacing: 1.6px;
@@ -31,4 +29,20 @@
 .contactItemName {
   color: rgba(102, 106, 245, 0.7);
   font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .contactItemBtn {
+    padding: 8px 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contactItem {
+    font-size: calc(var(--index) * 0.8);
+  }
+
+  .contactItemBtn {
+    font-size: calc(var(--index) * 0.7);
+  }
 }

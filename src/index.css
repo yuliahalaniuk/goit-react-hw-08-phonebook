@@ -1,5 +1,9 @@
 /* bring in normalize.css styles */
 
+:root {
+  --index: calc(1vw + 1vh);
+}
+
 body {
   margin: 0;
   padding: 0;
