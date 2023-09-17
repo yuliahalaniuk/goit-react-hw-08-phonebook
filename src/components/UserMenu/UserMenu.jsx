@@ -6,7 +6,6 @@ import css from './UserMenu.module.css';
 const UserMenu = () => {
   const dispatch = useDispatch();
   const userEmail = useSelector(getUserEmail);
-  console.log(userEmail);
   return (
     <div className={css.userMenu}>
       <p className={css.userGreeting}>{userEmail && userEmail}</p>
