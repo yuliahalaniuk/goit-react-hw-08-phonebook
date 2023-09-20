@@ -13,7 +13,7 @@ const ContactsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchContacts);
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   if (isError) {
